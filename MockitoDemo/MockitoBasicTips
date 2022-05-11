@@ -1,0 +1,27 @@
+method Fails--> checkMethod1(a,anyString())  ---> throws error/exception/not pass    ---------> where a is of type String #argumentmatchers
+method Pass--> checkMethod2(eq(a),anyString())  ---> will pass without any error/exception ---------> where a is of type String #argumentmatchers
+when().thenThrow() won't work for the void return types so we can use doThrow().when()
+
+--------------------------------*****************************------------------------
+How to use mockito in the following cases?
+
+
+private method --> Mockito doesn't mock private methods but power mock can
+final class  --> latest version supports mocking of final class #since 2.1.0 &  but spying not possible
+final method  --> latest version supports mocking of final method #since 2.1.0 &  but spying not possible
+void methods  --> answer--> doThrow(),doNothing() ,doReturn(),doAnswer(),doCallRealMethod() --> used to stub void methods
+JKS & cyborg & spring security??
+jenkins and Urbancode build??
+difference between bitbucket and github??
+
+---------------------------***********-------------------------------
+@InjectMocks,@Mock -> when().thenReturn() ---> for mocking object
+@InjectMocks,@Spy -> when().thenCallRealMethod() ---> for spying on real object
+
+-----------------------------***********-----------------------------
+@InjectMocks --> works only on classes
+@Mock ----->  works on both classes and interfaces
+@Spy ------>  works only on classes ----  &  ----> works only on real methods of interfaces but not works on abstract method
+--------------------******************--------------------------
+check for two mocks in a method
+check  test for void return type  ---> we can use verify method to check it whether it is triggered or not
