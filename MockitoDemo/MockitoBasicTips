@@ -24,4 +24,13 @@ difference between bitbucket and github??
 @Spy ------>  works only on classes ----  &  ----> works only on real methods of interfaces but not works on abstract method
 --------------------******************--------------------------
 check for two mocks in a method
-check  test for void return type  ---> we can use verify method to check it whether it is triggered or not & verify method will work only after the assert method
+check  test for void return type  ---> we can use verify method to check it whether it is triggered or not & verify method will work only after the assert method 
+                          AND ALSO CHECK THE FOLLOWING EXCEPTION FOR THE CORRECT USE OF VERIFY METHOD
+org.mockito.exceptions.misusing.NotAMockException: 
+Argument passed to verify() is of type ServiceClass1 and is not a mock!
+Make sure you place the parenthesis correctly!
+See the examples of correct verifications:
+    verify(mock).someMethod();
+    verify(mock, times(10)).someMethod();
+    verify(mock, atLeastOnce()).someMethod();
+
