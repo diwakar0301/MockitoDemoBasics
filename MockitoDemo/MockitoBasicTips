@@ -24,4 +24,4 @@ difference between bitbucket and github??
 @Spy ------>  works only on classes ----  &  ----> works only on real methods of interfaces but not works on abstract method
 --------------------******************--------------------------
 check for two mocks in a method
-check  test for void return type  ---> we can use verify method to check it whether it is triggered or not
+check  test for void return type  ---> we can use verify method to check it whether it is triggered or not & verify method will work only after the assert method
