@@ -33,4 +33,53 @@ See the examples of correct verifications:
     verify(mock).someMethod();
     verify(mock, times(10)).someMethod();
     verify(mock, atLeastOnce()).someMethod();
+--------------------------------------*****************************--------------------------------
+//extends AbstractTestNGSpringContextTests //use this for safer side
+	@Mock
+	private DaoClass1 dc1;
+	@BeforeMethod //use this for safer side 
+	public void set() {
+			MockitoAnnotations.initMocks(this);  //use this for safer side
+	}
+  
+  
+  -------------------------------------------********************************---------------------------------
+                          POWER MOCK DEPENDENCIES
+powermock-api-mockito2: This is the core PowerMock dependency and used to extend Mockito2 mocking framework. 
+If you are using Mockito 1.x versions then use powermock-api-mockito module.
 
+powermock-module-junit4: For running JUnit 4 test cases using PowerMock.
+
+powermock-module-testng: For running TestNG test cases and supporting PowerMock.
+
+PowerMock provides extended features for Mockito, one of them is the ability to test static methods. It’s easily integrated with JUnit 4 and TestNG. 
+However, there is no near-term support plan for JUnit 5.
+
+
+ <dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>2.19.0</version>
+			<scope>test</scope>
+		</dependency>
+		 
+		 
+  <dependency>  
+    <groupId>org.powermock</groupId>  
+    <artifactId>powermock-api-mockito2</artifactId>  
+    <version>2.0.9</version>  
+    <scope>test</scope>  
+</dependency>  
+<dependency>  
+    <groupId>org.powermock</groupId>  
+    <artifactId>powermock-module-junit4</artifactId>  
+    <version>2.0.9</version>  
+    <scope>test</scope>  
+</dependency>  
+	<!-- https://mvnrepository.com/artifact/org.powermock/powermock-module-testng -->
+<dependency>
+    <groupId>org.powermock</groupId>
+    <artifactId>powermock-module-testng</artifactId>
+    <version>2.0.9</version>
+    <scope>test</scope>
+</dependency>
